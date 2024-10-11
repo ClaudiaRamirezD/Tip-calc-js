@@ -70,3 +70,7 @@ button {
     outline: none;
     background: none;
 }
+
+input {
+  font-family: inherit; /* Make the input inherit the font family */
+}

@@ -13,8 +13,8 @@
   --font-family: "Space Mono", monospace;
   --font-weight-bold: 700;
   --font-weight-regular: 400;
-  --font-size: clamp(1.4rem, 0.8366rem + 1.5023vw, 3rem);
-  --font-size-inputs: clamp(2.4rem, 1.8366rem + 1.5023vw, 4rem);
+  --font-size: clamp(1.4rem, 1.3296rem + 0.1878vw, 1.6rem);
+  --font-size-inputs: clamp(2rem, 1.8366rem + 1.5023vw, 2.4rem);
   --br: 1.5rem;
 }
 
@@ -81,6 +81,10 @@ input {
   cursor: pointer;
 }
 
+input::placeholder {
+  color: var(--neutral-cyan-900);
+}
+
 .bill-input img,
 .people-input img {
   position: absolute;
@@ -119,10 +123,15 @@ button:hover {
   color: var(--neutral-cyan-900);
 }
 
+button:active {
+  background-color: var(--accent-cyan);
+}
+
 #custom {
   font-size: 2rem;
   padding: 1rem 2rem;
   background-color: var(--neutral-cyan-300);
+  color: var(--neutral-cyan-900);
 }
 
 #custom::placeholder {
@@ -170,6 +179,16 @@ span {
   padding: 1rem;
   border-radius: .5rem;
   font-weight: bold;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.reset-btn:hover {
+  background-color: hsl(173, 61%, 77%);
+  color: var(--neutral-cyan-900);
+}
+
+.reset-btn:active {
+  background-color: var(--accent-cyan);
 }
 
 .attribution {
@@ -178,4 +197,43 @@ span {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 500px) {
+  .card {
+    width: 80%;
+  }
+  .card-container {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .inputs, .outputs {
+    flex-basis: 50%; /* Cada elemento ocupa el 50% */
+    box-sizing: border-box; /* Asegura que el padding/border no afecte el ancho */
+  }
+
+  .tip-btns{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tip-btns button, #custom {
+    padding: 1rem;
+  }
+
+  #custom::placeholder {
+    font-size: 1.4rem;
+  }
+
+  .reset-btn{
+    margin-top: auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .card {
+    width: 60%;
+  }
+  header {
+    padding-top: 0;
+  }
 }
