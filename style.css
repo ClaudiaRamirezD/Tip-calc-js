@@ -113,7 +113,7 @@ input::placeholder {
   color: var(--neutral-cyan-300);
   font-size: var(--font-size-inputs);
   font-weight: var(--font-weight-bold);
-  padding: 1rem 5rem;
+  padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
 }
@@ -166,7 +166,7 @@ span {
   padding-top: .6rem;
 }
 
-#total {
+h2 {
   color: var(--accent-cyan);
   font-size: var(--font-size-inputs);
 }

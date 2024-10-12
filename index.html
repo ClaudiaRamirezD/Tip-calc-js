@@ -21,25 +21,25 @@
         <div class="bill-sec">
           <label for="bill">Bill</label>
           <div class="bill-input">
-            <input type="text" placeholder="0" id="bill">
+            <input type="number" placeholder="0" id="bill">
             <img src="/images/icon-dollar.svg" alt="dollar">
           </div>
         </div>
         <div class="tip-sec">
           <label for="tip">Select tip %</label>
           <div class="tip-btns">
-            <button>5%</button>
-            <button>10%</button>
-            <button>15%</button>
-            <button>25%</button>
-            <button>50%</button>
-            <input type="number" placeholder="Custom" id="custom">   
+            <button data-percentage="0.05">5%</button>
+            <button data-percentage="0.10">10%</button>
+            <button data-percentage="0.15">15%</button>
+            <button data-percentage="0.25">25%</button>
+            <button data-percentage="0.50">50%</button>
+            <input type="number" placeholder="Custom" id="custom" data-percentage="">   
           </div>
         </div>
         <div class="people-sec">
           <label for="people">Number of People</label>
           <div class="people-input">
-            <input type="text" placeholder="0" id="people">
+            <input type="number" placeholder="0" id="people">
             <img src="/images/icon-person.svg" alt="person">
           </div>
         </div>
@@ -47,11 +47,11 @@
       <section class="outputs">
         <div class="tip-amount">
           <p>Tip Amount <br><span>/ person</span></p>
-          <h2 id="total">$0.00</h2>
+          <h2 id="total-tip">$0.00</h2>
         </div>
         <div class="total">
           <p>Total <br><span>/ person</span></p>
-          <h2 id="total">$0.00</h2>
+          <h2 id="amount-per-person">$0.00</h2>
         </div>
         <button class="reset-btn">Reset</button>
       </section>
