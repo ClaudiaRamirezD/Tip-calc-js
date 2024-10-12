@@ -123,9 +123,34 @@ button:hover {
   color: var(--neutral-cyan-900);
 }
 
-button:active {
+button.active {
   background-color: var(--accent-cyan);
+  color: var(--neutral-cyan-900);
 }
+
+.people-sec {
+  position: relative;
+}
+
+.people-sec .error-message {
+  color: rgb(235, 82, 6);
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+}
+
+.people-input input.error {
+  outline-color:  rgb(235, 82, 6);
+  border-color:  rgb(235, 82, 6);
+}
+
+.people-sec input.error + .error-message {
+  display: inline; /* Show error message when input has error class */
+
+}
+
+
 
 #custom {
   font-size: 2rem;
@@ -180,6 +205,10 @@ h2 {
   border-radius: .5rem;
   font-weight: bold;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.reset-btn.enabled {
+  background-color: var(--accent-cyan);
 }
 
 .reset-btn:hover {
