@@ -71,6 +71,6 @@ button {
     background: none;
 }
 
-input {
+input, button {
   font-family: inherit; /* Make the input inherit the font family */
 }
