@@ -42,7 +42,7 @@ header {
 
 .card {
   background-color: var(--neutral-white-100);
-  width: 100%;
+  max-width: clamp(37.5rem, 29.5775rem + 21.1268vw, 80rem);
   border-radius: var(--br);
 }
 
@@ -59,7 +59,7 @@ header {
   gap: 3rem;
 }
 
-label {
+label, legend {
   color: var(--neutral-cyan-600);
 }
 
@@ -95,37 +95,59 @@ input::placeholder {
 
 .bill-sec,
 .tip-sec,
-.people-sec {
+.people-sec{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
+
 .tip-btns {
+  margin-top: 1.5rem;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.tip-btns button,
+.tip-btns label,
 #custom {
   background-color: var(--neutral-cyan-900);
-  color: var(--neutral-cyan-300);
-  font-size: var(--font-size-inputs);
-  font-weight: var(--font-weight-bold);
+  color: white;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: .5rem;
   cursor: pointer;
 }
 
-button:hover {
+.tip-btns span {
+  font-size: var(--font-size-inputs);
+  font-weight: var(--font-weight-bold);
+}
+
+.tip-btns label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tip-btns label:hover {
   background-color: hsl(173, 61%, 77%);
   color: var(--neutral-cyan-900);
 }
 
-button.active {
+button.active, .tip-btns label.active {
   background-color: var(--accent-cyan);
   color: var(--neutral-cyan-900);
+}
+
+.tip-btns input[type="radio"] {
+    display: none;
+}
+
+
+
+.tip-btns label.active {
+    background-color: var(--accent-cyan);
+    color: var(--neutral-cyan-900);
 }
 
 .people-sec {
@@ -187,7 +209,6 @@ p {
 span {
   display: block;
   font-size: 1.2rem;
-  color: var(--neutral-cyan-500);
   padding-top: .6rem;
 }
 
@@ -228,10 +249,7 @@ h2 {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 500px) {
-  .card {
-    width: 80%;
-  }
+@media screen and (min-width: 60rem) {
   .card-container {
     flex-direction: row;
     gap: 3rem;
@@ -245,7 +263,7 @@ h2 {
   .tip-btns{
     grid-template-columns: repeat(3, 1fr);
   }
-  .tip-btns button, #custom {
+  .tip-btns label, #custom {
     padding: 1rem;
   }
 
@@ -258,7 +276,7 @@ h2 {
   }
 }
 
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   .card {
     width: 60%;
   }
@@ -269,4 +287,4 @@ h2 {
   h2 {
     font-size: clamp(2.4rem, 1.8366rem + 1.5023vw, 4rem);
   }
-}
+} */

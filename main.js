@@ -1,5 +1,5 @@
 const inputBill = document.querySelector("#bill");
-const tipOptions = document.querySelectorAll(".tip-btns button");
+const tipOptions = document.querySelectorAll(".tip-btns input[type='radio']");
 const customInput = document.querySelector("#custom");
 const people = document.querySelector("#people");
 const totalTip = document.querySelector("#total-tip");
@@ -19,25 +19,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Add event listener for tip buttons
+    const labels = document.querySelectorAll(".tip-label");
+
+    labels.forEach((label) => {
+      // Listen for changes on the radio buttons inside each label
+        label
+        .querySelector("input[type='radio']")
+        .addEventListener("change", () => {
+            // Remove active class from all labels
+            labels.forEach((lbl) => lbl.classList.remove("active"));
+            // Add active class to the selected label
+            label.classList.add("active");
+        });
+    });
+
     tipOptions.forEach((option) => {
         option.addEventListener("click", function () {
-        tipOptions.forEach((btn) => btn.classList.remove("active"));
         customInput.value = "";
-        this.classList.add("active");
-
-        tipPercentage = parseFloat(this.getAttribute("data-percentage"));
+        tipPercentage = parseFloat(this.value);
         calculateResults();
-        checkResetButton(); // Check if the reset button should be enabled
+        checkResetButton();
         });
     });
 
     // Add event listener to custom tip input
     customInput.addEventListener("input", function () {
-        tipOptions.forEach((btn) => btn.classList.remove("active")); // Remove active class from buttons
+        tipOptions.forEach((btn) => (btn.checked = false));
         const customValue = parseFloat(this.value) || 0;
         tipPercentage = customValue / 100;
         calculateResults();
-        checkResetButton(); // Check if the reset button should be enabled
+        checkResetButton();
     });
 
     // Add event listener to people
@@ -45,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         numberOfPeople = parseInt(this.value) || 0;
         validatePeopleInput();
         calculateResults();
-        checkResetButton(); // Check if the reset button should be enabled
+        checkResetButton();
     });
 
     // Function to validate people input
@@ -110,10 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
         tipPercentage = 0;
         numberOfPeople = 0;
 
-        // Remove active class from tip buttons
-        tipOptions.forEach((btn) => btn.classList.remove("active"));
+        // Uncheck all radio buttons
+        tipOptions.forEach((btn) => (btn.checked = false));
 
         // Hide the error message if there was any
         validatePeopleInput();
     });
 });
+

@@ -21,20 +21,37 @@
         <div class="bill-sec">
           <label for="bill">Bill</label>
           <div class="bill-input">
-            <input type="number" placeholder="0" id="bill">
+            <input type="number" placeholder="0" id="bill" step=".5">
             <img src="/images/icon-dollar.svg" alt="dollar">
           </div>
         </div>
         <div class="tip-sec">
-          <label for="tip">Select tip %</label>
-          <div class="tip-btns">
-            <button data-percentage="0.05">5%</button>
-            <button data-percentage="0.10">10%</button>
-            <button data-percentage="0.15">15%</button>
-            <button data-percentage="0.25">25%</button>
-            <button data-percentage="0.50">50%</button>
-            <input type="number" placeholder="Custom" id="custom" data-percentage="">   
-          </div>
+          <fieldset class="fieldset">
+              <legend>Select tip %</legend>
+              <div class="tip-btns">
+                <label class="tip-label">
+                    <input type="radio" name="tip" value="0.05">
+                    <span>5%</span>
+                </label>
+                <label class="tip-label">
+                    <input type="radio" name="tip" value="0.10">
+                    <span>10%</span>
+                </label>
+                <label class="tip-label">
+                    <input type="radio" name="tip" value="0.15">
+                    <span>15%</span>
+                </label>
+                <label class="tip-label">
+                    <input type="radio" name="tip" value="0.25">
+                    <span>25%</span>
+                </label>
+                <label class="tip-label">
+                    <input type="radio" name="tip" value="0.50">
+                    <span>50%</span>
+                </label>
+                <input type="number" placeholder="Custom" id="custom" name="tip-custom">
+            </div>
+          </fieldset>
         </div>
         <div class="people-sec">
           <label for="people">Number of People</label>
