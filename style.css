@@ -275,16 +275,13 @@ h2 {
     margin-top: auto;
   }
 }
-
-/* @media screen and (min-width: 800px) {
-  .card {
-    width: 60%;
-  }
-  header {
-    padding-top: 0;
-  }
-
-  h2 {
-    font-size: clamp(2.4rem, 1.8366rem + 1.5023vw, 4rem);
-  }
-} */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
